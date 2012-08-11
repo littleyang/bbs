@@ -11,11 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120811053243) do
+ActiveRecord::Schema.define(:version => 20120811151907) do
 
   create_table "articles", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "articleTitle",     :limit => 64
+    t.string   "subTitle",         :limit => 128
+    t.string   "articleContent",   :limit => 1024
+    t.integer  "posterId"
+    t.string   "postUserName",     :limit => 64
+    t.integer  "replayUserId"
+    t.string   "replayUserName",   :limit => 64
+    t.integer  "articleBoardId"
+    t.string   "articleBoardName", :limit => 64
+    t.string   "articleFile",      :limit => 64
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "board_articles", :force => true do |t|
@@ -37,6 +47,20 @@ ActiveRecord::Schema.define(:version => 20120811053243) do
   end
 
   create_table "notices", :force => true do |t|
+    t.string   "noticeTitle",     :limit => 64
+    t.string   "noticeContent",   :limit => 256
+    t.string   "noticeFile",      :limit => 64
+    t.string   "noticePublisher", :limit => 64
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "replay_articles", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "short_messages", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
