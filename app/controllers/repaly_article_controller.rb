@@ -1,0 +1,2 @@
+class RepalyArticleController < ApplicationController
+end

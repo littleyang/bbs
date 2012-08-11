@@ -1,0 +1,2 @@
+module RepalyArticleHelper
+end

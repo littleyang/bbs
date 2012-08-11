@@ -1,0 +1,2 @@
+class ShortMessageController < ApplicationController
+end
