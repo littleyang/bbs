@@ -1,0 +1,56 @@
+<%= form_for @board, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :boardid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :boardid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardName, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :boardName, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardDesc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :boardDesc, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardHostName, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :boardHostName, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardFavouriteid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :boardFavouriteid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardScore, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :boardScore, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardArticleid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :boardArticleid, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :boardArticlePostName, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :boardArticlePostName, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                board_path, :class => 'btn' %>
+  </div>
+<% end %>

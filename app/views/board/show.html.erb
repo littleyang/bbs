@@ -1,0 +1,35 @@
+<%- model_class = Board -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:boardid) %>:</strong></dt>
+  <dd><%= @board.boardid %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardName) %>:</strong></dt>
+  <dd><%= @board.boardName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardDesc) %>:</strong></dt>
+  <dd><%= @board.boardDesc %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardHostName) %>:</strong></dt>
+  <dd><%= @board.boardHostName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardFavouriteid) %>:</strong></dt>
+  <dd><%= @board.boardFavouriteid %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardScore) %>:</strong></dt>
+  <dd><%= @board.boardScore %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardArticleid) %>:</strong></dt>
+  <dd><%= @board.boardArticleid %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:boardArticlePostName) %>:</strong></dt>
+  <dd><%= @board.boardArticlePostName %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              board_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_board_path(@board), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              board_path(@board),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
